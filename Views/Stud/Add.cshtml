@@ -1,0 +1,48 @@
+﻿@model Asp_Core_Project.Models.Student
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add New Student</h2>
+<div class="row" style="margin-left:0px;">
+    
+    @using (Html.BeginForm("Add", "Stud"))
+    {
+        <div class="form-group">
+            @Html.Label("Name")  @Html.TextBoxFor(s => s.Std_Name, new { @class = "form-control" })
+
+        </div>
+
+
+        <div class="form-group">
+            @Html.Label("Class") @Html.TextBoxFor(s => s.Std_Class, new { @class = "form-control", @type = "number" })
+
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Roll No") @Html.TextBoxFor(s => s.Std_Roll, new { @class = "form-control", @type = "number" })
+
+        </div>
+
+        <div class="form-group">
+            @Html.Label("School")  @Html.TextBoxFor(s => s.Std_School, new { @class = "form-control" })
+
+        </div>
+
+        <div class="form-group">
+
+            @Html.Label("Gender")  @Html.TextBoxFor(s => s.Std_Gender, new { @class = "form-control" })
+
+        </div>
+
+        <button type="submit" class="btn btn-info" id="btnSubmit">Save</button>
+
+    }
+</div>
+
+@if (ViewBag.Message != "")
+{
+    <h4 id="Message">@ViewBag.Message</h4>
+}
+
